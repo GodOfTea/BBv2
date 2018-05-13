@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookClass", "BookClass\Book
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{29A51BEB-CCFC-4AF3-8A5D-3A92360B0DBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderForma", "OrderForma\OrderForma.csproj", "{A8E70049-5FCA-4179-99A1-898B9AEAF37B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{29A51BEB-CCFC-4AF3-8A5D-3A92360B0DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A51BEB-CCFC-4AF3-8A5D-3A92360B0DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A51BEB-CCFC-4AF3-8A5D-3A92360B0DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E70049-5FCA-4179-99A1-898B9AEAF37B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E70049-5FCA-4179-99A1-898B9AEAF37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E70049-5FCA-4179-99A1-898B9AEAF37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E70049-5FCA-4179-99A1-898B9AEAF37B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

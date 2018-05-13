@@ -16,6 +16,10 @@ namespace BlackBooks
         /// </summary>
         public DateTime Filled { get; set; }
         /// <summary>
+        /// Дата доставки
+        /// </summary>
+        public DateTime Delivery { get; set; }
+        /// <summary>
         /// ФИО заказчика
         /// </summary>
         public string FullName { get; set; }
@@ -23,6 +27,10 @@ namespace BlackBooks
         /// Названия книг
         /// </summary>
         public List<BookTitle> BookTitles { get; set; }
+        public List<BookAuthor> BookAuthors { get; set; }
+        public List<BookGener> BookGeneres { get; set; }
+        public List<BookPrice> BookPrices { get; set; }
+        public List<BookPresence> BookPresences { get; set; }
         /// <summary>
         /// Адрес
         /// </summary>
@@ -30,52 +38,63 @@ namespace BlackBooks
         /// <summary>
         /// Стоимость
         /// </summary>
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         /// <summary>
         /// Валюта
         /// </summary>
         public Currency Currency { get; set; }
     }
     /// <summary>
-    /// Названия книг
+    /// Информация о названиях
     /// </summary>
     public class BookTitle
-    {
-        /// <summary>
-        /// Книга
-        /// </summary>
-        public List<BookDetails> Book { get; set; }
-    }
-    /// <summary>
-    /// Информация о книге
-    /// </summary>
-    public class BookDetails
     {
         /// <summary>
         /// Название книги
         /// </summary>
         public string Title { get; set; }
+    }
+    /// <summary>
+    /// Информация о авторах
+    /// </summary>
+    public class BookAuthor
+    {
+        /// <summary>
+        /// Автор книги
+        /// </summary>
+        public string Author { get; set; }
+    }
+    /// <summary>
+    /// Информация о жанрах
+    /// </summary>
+    public class BookGener
+    {
         /// <summary>
         /// Жанр
         /// </summary>
-        public Genre Genre {get;set;}
-        /// <summary>
-        /// Количество страниц
-        /// </summary>
-        public int PagesNumber { get; set; }
+        public Genre Genre { get; set; }
+    }
+    /// <summary>
+    /// Информация о ценах
+    /// </summary>
+    public class BookPrice
+    {
         /// <summary>
         /// Цена
         /// </summary>
         public double Price { get; set; }
-        /// <summary>
-        /// Возрастное ограничение
-        /// </summary>
-        public AgeLimit AgeLimit { get; set; }
+    }
+    /// <summary>
+    /// Информация о наличии
+    /// </summary>
+    public class BookPresence
+    {
         /// <summary>
         /// Наличие
         /// </summary>
         public bool Presence { get; set; }
     }
+    
 
     public enum Genre
     {
