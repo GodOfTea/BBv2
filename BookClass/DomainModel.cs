@@ -26,7 +26,7 @@ namespace BlackBooks
         /// <summary>
         /// Названия книг
         /// </summary>
-        public List<BookDeteil> BookDeteils { get; set; }
+        public List<BookTitle> BookTitles { get; set; }
         /// <summary>
         /// Адрес
         /// </summary>
@@ -46,32 +46,41 @@ namespace BlackBooks
     public class BookDeteil
     {
         /// <summary>
+        /// Книга
+        /// </summary>
+        public List<BookDetails> Book { get; set; }
+    }
+    /// <summary>
+    /// Информация о книге
+    /// </summary>
+    public class BookDetails
+    {
+        /// <summary>
         /// Название книги
         /// </summary>
         public string Title { get; set; }
         /// <summary>
         /// Автор книги
         /// </summary>
-        public string Author { get; set; }
+        public Genre Genre {get;set;}
         /// <summary>
-        /// Жанр
+        /// Количество страниц
         /// </summary>
-        public Genre Genre { get; set; }
+        public int PagesNumber { get; set; }
         /// <summary>
         /// Цена
         /// </summary>
         public double Price { get; set; }
-
-        public override string ToString()
-        {
-            return string.Format("Книга: {0} | Автор: {1} | Жанр: {2} | Цена: {3} ", Title, Author, Genre.ToString(), Price);
-        }
-
-        public BookDeteil Clone()
-        {
-            return new BookDeteil { Title = Title, Author = Author, Genre = Genre, Price = Price };
-        }
+        /// <summary>
+        /// Возрастное ограничение
+        /// </summary>
+        public AgeLimit AgeLimit { get; set; }
+        /// <summary>
+        /// Наличие
+        /// </summary>
+        public bool Presence { get; set; }
     }
+    
 
     public enum Genre
     {
