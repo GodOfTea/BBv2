@@ -16,13 +16,17 @@ namespace BlackBooks
         /// </summary>
         public DateTime Filled { get; set; }
         /// <summary>
+        /// Дата доставки
+        /// </summary>
+        public DateTime Delivery { get; set; }
+        /// <summary>
         /// ФИО заказчика
         /// </summary>
         public string FullName { get; set; }
         /// <summary>
         /// Названия книг
         /// </summary>
-        public List<BookTitle> BookTitles { get; set; }
+        public List<BookDeteil> BookDeteils { get; set; }
         /// <summary>
         /// Адрес
         /// </summary>
@@ -30,89 +34,56 @@ namespace BlackBooks
         /// <summary>
         /// Стоимость
         /// </summary>
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         /// <summary>
         /// Валюта
         /// </summary>
         public Currency Currency { get; set; }
     }
     /// <summary>
-    /// Названия книг
+    /// Информация о названиях
     /// </summary>
-    public class BookTitle
-    {
-        /// <summary>
-        /// Книга
-        /// </summary>
-        public List<BookDetails> Book { get; set; }
-    }
-    /// <summary>
-    /// Информация о книге
-    /// </summary>
-    public class BookDetails
+    public class BookDeteil
     {
         /// <summary>
         /// Название книги
         /// </summary>
         public string Title { get; set; }
         /// <summary>
+        /// Автор книги
+        /// </summary>
+        public string Author { get; set; }
+        /// <summary>
         /// Жанр
         /// </summary>
-        public Genre Genre {get;set;}
-        /// <summary>
-        /// Количество страниц
-        /// </summary>
-        public int PagesNumber { get; set; }
+        public Genre Genre { get; set; }
         /// <summary>
         /// Цена
         /// </summary>
         public double Price { get; set; }
-        /// <summary>
-        /// Возрастное ограничение
-        /// </summary>
-        public AgeLimit AgeLimit { get; set; }
-        /// <summary>
-        /// Наличие
-        /// </summary>
-        public bool Presence { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Книга: {0} | Автор: {1} | Жанр: {2} | Цена: {3} ", Title, Author, Genre.ToString(), Price);
+        }
+
+        public BookDeteil Clone()
+        {
+            return new BookDeteil { Title = Title, Author = Author, Genre = Genre, Price = Price };
+        }
     }
 
     public enum Genre
     {
-        BusinessBook,
-        ClassicalLiterature,
-        ForeignLiterature,
-        RussianLiterature,
-        ChildrenBook,
         Detective,
         Fantasy,
         Fiction,
-        ModernProse,
         Adventures,
         Horror,
-        JournalisticLiterature,
         RomanceNovel,
-        Militant,
-        Psychology,
         Tale,
-        Poetry,
-        Science,
-        Leisure,
         Comics,
-        Esotericist,
-        Culture,
-        HumorousLiterature,
-        Religion,
-        Dictionary
-    }
-
-    public enum AgeLimit
-    {
-        zeroAndOlder,
-        sixAndOlder,
-        twelveAndOlder,
-        sixteenAndOlder,
-        eighteenAndOlder
+        Biography
     }
 
     public enum Currency
